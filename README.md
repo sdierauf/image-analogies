@@ -59,9 +59,12 @@ Parameters
  * * 'avg': average pooling - generally smoother results
  * * 'max': max pooling - more noisy but maybe that's what you want (original default)
  * --contrast adjust the contrast of the output by removing the bottom x percentile
-    and scaling by the (100 - x)th percentile. Defaults to 1.0
+    and scaling by the (100 - x)th percentile. Defaults to 0.02
  * --output-full Output all intermediate images at full size regardless of actual scale
-
+ * --analogy-layers Comma-separated list of layer names to be used for the analogy loss (default: "conv3_1,conv_4_1")
+ * --mrf-layers Comma-separated list of layer names to be used for the MRF loss (default: "conv3_1,conv_4_1")
+ * --content-layers Comma-separated list of layer names to be used for the content loss (default: "conv3_1,conv_4_1")
+ * --patch-size Patch size used for matching (default: 3)
 The analogy loss is the amount of influence of B -> A -> A' -> B'
 It should be set a lot higher than the MRF loss (default is 9:1)
 
